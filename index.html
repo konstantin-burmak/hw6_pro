@@ -24,19 +24,46 @@
 
             function getResult(numberOne, numberTwo, symbol) {
 
-                if (symbol === '*') {
-                    return numberOne * numberTwo;
-                } else if (symbol === '+') {
-                    return numberOne + numberTwo;
+                switch (symbol) {
+                    case "+": 
+                        return numberOne + numberTwo; 
+                        break;
+
+                    case "-": 
+                        return numberOne - numberTwo; 
+                        break;
+
+                    case "*":
+                        return numberOne * numberTwo;
+                        break;
+
+                    case "/":
+                        return numberOne / numberTwo;
+                        break;
+                        
+                    case ">":
+                        return numberOne > numberTwo;
+                        break;
+
+                    case "<":
+                        return numberOne < numberTwo;
+                        break;
+
+                    case "=":
+                        return numberOne == numberTwo;
+                        break;
+
+                    default:
+                        return "No result";
                 }
             }
 
-            console.log('getResult:' + ' '  + getResult(5, 6, '*'));
+            console.log('getResult:' + ' '  + getResult(10, 6, '+'));
 
             function isCharPresent(symbol, str) {
                 let bool = false;
 
-                for (let i in str) {
+                for (i = 0; i < str.length; i++) {
 
                     if (str[i] === symbol) {
                         bool = true;
@@ -50,8 +77,8 @@
 
             function charIndexOf(symbol, str) {
                 let index = -1;
-
-                for (let i in str) {
+                let line = "";
+                for (i = 0; i < str.length; i++) {
 
                     if (str[i] === symbol) {
                         index = i;
